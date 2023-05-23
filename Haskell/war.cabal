@@ -1,0 +1,24 @@
+cabal-version:          2.4
+name:                   war
+version:                0.1.0.0
+
+extra-source-files:     CHANGELOG.md
+
+library war-lib
+    exposed-modules:    War
+    hs-source-dirs:     lib
+    build-depends:      base >=4.14.3.0
+    default-language:   Haskell2010
+
+executable war
+    main-is:            Main.hs
+    build-depends:      base >=4.14.3.0
+    hs-source-dirs:     app
+    default-language:   Haskell2010
+
+test-suite war-tests
+    type:               exitcode-stdio-1.0
+    main-is:            WarTest.hs
+    build-depends:      base, HUnit, war-lib
+    hs-source-dirs:     tests
+    default-language:   Haskell2010
